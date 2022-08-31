@@ -1,7 +1,6 @@
 body {
   margin: 10px;
   text-align: center;
-  font: normal 1.5em Arial, sans-serif;
   background-color: rgb(242, 213, 206);
 }
 
@@ -50,4 +49,8 @@ body {
 
 #button-random-color:hover {
   background-color:  rgb(187, 98, 147);
+}
+
+.color.circle.selected {
+  padding: 10px;
 }
