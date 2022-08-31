@@ -3,6 +3,8 @@ const color2 = document.getElementById('secondColor');
 const color3 = document.getElementById('thirdColor');
 const color4 = document.getElementById('fourthColor');
 const containerBoard = document.querySelector('#pixel-board');
+const inputSize = document.getElementById('board-size');
+const sizeBoard = inputSize.value;
 
 function randomColorGenerator() {
   const red = Math.floor(Math.random() * 255);
@@ -30,8 +32,6 @@ createColorPalette();
 const buttonGeneratorColor = document.getElementById('button-random-color');
 buttonGeneratorColor.addEventListener('click', createColorPalette);
 
-const size = 25;
-
 function createBoardPixels(size) {
   containerBoard.style.width = `${5 * 42}px`;
   for (let index = 0; index < size; index += 1) {
@@ -40,4 +40,5 @@ function createBoardPixels(size) {
     containerBoard.appendChild(pixel);
   }
 }
-createBoardPixels(size);
+createBoardPixels(25);
+
