@@ -1,3 +1,4 @@
+const localStorageKey = 'colorPalette';
 const color1 = document.getElementById('firstColor');
 const color2 = document.getElementById('secondColor');
 const color3 = document.getElementById('thirdColor');
@@ -28,13 +29,41 @@ function generateDistinctColors(count) {
   return colors;
 }
 
-function completePalette() {
-  const [firstColor, secondColor, thirdColor] = generateDistinctColors(3);
+function completePalette(colors) {
+  const [firstColor, secondColor, thirdColor] = colors;
   color1.style.backgroundColor = 'rgb(0, 0, 0)';
   color2.style.backgroundColor = firstColor;
   color3.style.backgroundColor = secondColor;
   color4.style.backgroundColor = thirdColor;
 }
-completePalette();
 
-buttonColors.addEventListener('click', completePalette);
+function saveColors(colors) {
+  localStorage.setItem(localStorageKey, JSON.stringify(colors));
+}
+
+function onClickGenerateColors() {
+  const colors = generateDistinctColors(3);
+  completePalette(colors);
+  saveColors(colors);
+}
+
+function getSavedColors() {
+  const value = localStorage.getItem(localStorageKey);
+  if (!value) {
+    return;
+  }
+  return JSON.parse(value);
+}
+
+buttonColors.addEventListener('click', onClickGenerateColors);
+
+window.onload = function () {
+  const colorsSaved = getSavedColors();
+  if (colorsSaved) {
+    completePalette(colorsSaved);
+    return;
+  }
+  const colors = generateDistinctColors(3);
+  completePalette(colors);
+  saveColors(colors);
+};
