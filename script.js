@@ -4,6 +4,7 @@ const color2 = document.getElementById('secondColor');
 const color3 = document.getElementById('thirdColor');
 const color4 = document.getElementById('fourthColor');
 const buttonColors = document.getElementById('button-random-color');
+const containerBoard = document.querySelector('#pixel-board');
 
 function generateRandomColor() {
   const red = Math.floor(Math.random() * 255);
@@ -55,10 +56,30 @@ function getSavedColors() {
   return JSON.parse(value);
 }
 
+function onClickPixel() {
+  const colorSelected = document.querySelector('.selected');
+  const color = colorSelected.style.backgroundColor;
+  this.style.backgroundColor = color;
+}
+
+function createBoardPixels(size) {
+  const lenghtBoard = size * size;
+  containerBoard.innerHTML = '';
+  containerBoard.style.width = `${size * 42}px`;
+  for (let index = 0; index < lenghtBoard; index += 1) {
+    const pixel = document.createElement('div');
+    pixel.className = 'pixel';
+    containerBoard.appendChild(pixel);
+
+    pixel.addEventListener('click', onClickPixel);
+  }
+}
+
 buttonColors.addEventListener('click', onClickGenerateColors);
 
 window.onload = function () {
   const colorsSaved = getSavedColors();
+  createBoardPixels(5);
   if (colorsSaved) {
     completePalette(colorsSaved);
     return;

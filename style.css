@@ -1,6 +1,28 @@
+body {
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
 .color {
   border: 1px solid black;
   display: inline-block;
   width: 40px;
   height: 40px;
+}
+
+.pixel {
+  height: 40px;
+  width: 40px;
+  border: 1px solid rgb(0, 0, 0);
+  background-color: rgb(255, 255, 255);
+  display: inline-block;
+  margin-bottom: -4px;
+}
+
+#button-random-color {
+  margin: 10px;
+}
+
+#pixel-board {
+  display: inline-block;
 }
