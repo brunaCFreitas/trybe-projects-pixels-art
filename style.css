@@ -1,56 +1,6 @@
-body {
-  margin: 10px;
-  text-align: center;
-  background-color: rgb(242, 213, 206);
-}
-
-.circle {
+.color {
   border: 1px solid black;
-  border-radius: 100%;
   display: inline-block;
   width: 40px;
   height: 40px;
-  margin: 10px;
-}
-
-#pixel-board {
-  margin-top: 20px;
-  display: inline-block;
-}
-
-.pixel {
-  height: 40px;
-  width: 40px;
-  border: 1px solid rgb(0, 0, 0);
-  background-color: rgb(255, 255, 255);
-  display: inline-block;
-  margin-bottom: -6px;
-}
-
-#board-size {
-  text-align: center;
-  width: 100px;
-  height: auto;
-  font-size: 16px;
-}
-
-#button-random-color {
-  text-align: center;
-  width: auto;
-  height: auto;
-  font-weight: bold;
-  font-size: 18px;
-  margin-bottom: 10px;
-  background-color: rgb(160, 44, 108);
-  color: white;
-  padding: 10px;
-  border: 1px solid rgb(255, 255, 255);
-}
-
-#button-random-color:hover {
-  background-color:  rgb(187, 98, 147);
-}
-
-.color.circle.selected {
-  padding: 10px;
 }
