@@ -6,6 +6,8 @@ const color4 = document.getElementById('fourthColor');
 const buttonColors = document.getElementById('button-random-color');
 const containerBoard = document.querySelector('#pixel-board');
 const buttonClear = document.getElementById('clear-board');
+const input = document.getElementById('board-size');
+const generateBoard = document.getElementById('generate-board');
 
 function generateRandomColor() {
   const red = Math.floor(Math.random() * 255);
@@ -96,6 +98,20 @@ color1.addEventListener('click', onClickPaletteColor);
 color2.addEventListener('click', onClickPaletteColor);
 color3.addEventListener('click', onClickPaletteColor);
 color4.addEventListener('click', onClickPaletteColor);
+generateBoard.addEventListener('click', () => {
+  let size = input.value;
+  if (size === '') {
+    alert('Board Inválido!');
+    size = 5;
+  }
+  if (size < 5) {
+    size = 5;
+  }
+  if (size > 50) {
+    size = 50;
+  }
+  createBoardPixels(size);
+});
 
 window.onload = () => {
   const colorsSaved = getSavedColors();
