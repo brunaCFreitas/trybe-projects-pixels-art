@@ -1,13 +1,13 @@
 body {
-  text-align: center;
   font-family: Arial, Helvetica, sans-serif;
 }
 
 .color {
-  border: 1px solid black;
+  border: 1px solid rgb(0, 0, 0);
   display: inline-block;
   width: 40px;
   height: 40px;
+  margin: 5px;
 }
 
 .pixel {
@@ -23,6 +23,6 @@ body {
   margin: 10px;
 }
 
-#pixel-board {
-  display: inline-block;
+#clear-board {
+  margin: 10px;
 }

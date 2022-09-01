@@ -5,6 +5,7 @@ const color3 = document.getElementById('thirdColor');
 const color4 = document.getElementById('fourthColor');
 const buttonColors = document.getElementById('button-random-color');
 const containerBoard = document.querySelector('#pixel-board');
+const buttonClear = document.getElementById('clear-board');
 
 function generateRandomColor() {
   const red = Math.floor(Math.random() * 255);
@@ -62,6 +63,20 @@ function onClickPixel() {
   this.style.backgroundColor = color;
 }
 
+function onClickPaletteColor() {
+  const prevSelected = document.querySelector('.selected');
+  prevSelected.classList.remove('selected');
+  this.classList.add('selected');
+}
+
+function onClickClear() {
+  const pixel = document.getElementsByClassName('pixel');
+  for (let index = 0; index < pixel.length; index += 1) {
+    pixel[index].style.backgroundColor = 'rgb(255, 255, 255)';
+  }
+  return pixel;
+}
+
 function createBoardPixels(size) {
   const lenghtBoard = size * size;
   containerBoard.innerHTML = '';
@@ -76,8 +91,13 @@ function createBoardPixels(size) {
 }
 
 buttonColors.addEventListener('click', onClickGenerateColors);
+buttonClear.addEventListener('click', onClickClear);
+color1.addEventListener('click', onClickPaletteColor);
+color2.addEventListener('click', onClickPaletteColor);
+color3.addEventListener('click', onClickPaletteColor);
+color4.addEventListener('click', onClickPaletteColor);
 
-window.onload = function () {
+window.onload = () => {
   const colorsSaved = getSavedColors();
   createBoardPixels(5);
   if (colorsSaved) {

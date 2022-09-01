@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,23 +8,25 @@
     <title>Projeto Pixels Art</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <header>
         <h1 id="title">Paleta de Cores</h1>
     </header>
-
     <section id="color-palette">
-        <div class="color" id="firstColor"></div>
+        <div class="color selected" id="firstColor"></div>
         <div class="color" id="secondColor"></div>
         <div class="color" id="thirdColor"></div>
-        <div class="color" id="fourthColor"></div>    
+        <div class="color" id="fourthColor"></div>
     </section>
-
     <div>
         <button type="submit" id="button-random-color">Cores aleatórias</button>
     </div>
-
+    <div>
+        <button type="submit" id="clear-board">Limpar</button>
+    </div>
     <section id="pixel-board"></section>
     <script src="script.js"></script>
 </body>
+
 </html>
