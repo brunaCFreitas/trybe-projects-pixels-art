@@ -1,10 +1,10 @@
 body {
   font-family: Arial, Helvetica, sans-serif;
-  background-color: rgb(250, 235, 215);
+  background-color: antiquewhite;
 }
 
 .color {
-  border: 1px solid rgb(0, 0, 0);
+  border: 1px solid black;
   display: inline-block;
   width: 40px;
   height: 40px;
@@ -14,8 +14,8 @@ body {
 .pixel {
   height: 40px;
   width: 40px;
-  border: 1px solid rgb(0, 0, 0);
-  background-color: rgb(255, 255, 255);
+  border: 1px solid black;
+  background-color: white;
   display: inline-block;
   margin-bottom: -4px;
 }
